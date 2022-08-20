@@ -2,6 +2,11 @@
 name: Build CR660x Padavan
 
 on: 
+  release:
+    types: [published]
+  push:
+    tags:
+    - 'v*'
   workflow_dispatch:
     branches:
       - main
