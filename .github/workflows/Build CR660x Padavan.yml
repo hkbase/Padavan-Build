@@ -2,20 +2,17 @@
 name: Build CR660x Padavan
 
 on: 
-  release:
-    types: [published]
-  push:
-    tags:
-    - 'v*'
-  #  branches: 
-  #    - master
-#  schedule:
-#    - cron: 0 8 * * 5
-  watch:
-    types: [started]
+  workflow_dispatch:
+    branches:
+      - main
+    inputs:
+      actions:
+        description: "start"
+        default: "start"
 
 jobs:
   build:
+  if: ${{ github.event.inputs.actions == 'start' || github.event.inputs.actions == ''}}
     runs-on: ubuntu-22.04
     if: github.event.repository.owner.id == github.event.sender.id
 
