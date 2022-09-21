@@ -1,5 +1,5 @@
 #本型号适用于运营商定制款CR660x路由器
-name: Build CR660x Padavan 4.4
+name: Build CR660x Padavan
 
 on: 
   release:
